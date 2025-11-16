@@ -14,31 +14,33 @@ To tackle these issues, RMCSNet introduces three key components:
 ## 🏗️ Model Architecture
 
 RMCSNet is built upon a ResNet-34 encoder and a custom decoder, enhanced with three novel modules:
-![Model Architecture](fig/1.png)
+![Model Architecture](fig/1.pdf)
 
 ### 1. Parallel Attention Module (PAM)
 - Integrated into skip connections to mitigate detail loss during downsampling.
 - Uses parallel branches with patch-aware convolutions and **ECA (Efficient Channel Attention)** to enhance road-relevant features while suppressing background noise.
-![PAM Architecture](fig/2.png)
+![PAM Architecture](fig/2.pdf)
 
 ### 2. Context-Aware Multi-Scale Fusion (CAMF)
 - Deployed at the bottleneck of the encoder–decoder.
 - Leverages **multi-window Swin Transformer blocks** (window sizes: 2×2, 4×4, 8×8, 16×16) to model global road context.
 - Fuses multi-scale features with global attention gating for coherent road structure recovery.
-- ![PAM Architecture](fig/3.png)
+- ![PAM Architecture](fig/3.pdf)
 
 ### 3. Multi-Scale Decoder (MSD)
 - Progressively upsamples and refines features from multiple encoder stages.
 - Ensures high-resolution output with sharp road boundaries.
-- ![PAM Architecture](fig/4.png)
+- ![PAM Architecture](fig/4.pdf)
 
 *(Architecture diagram will be included upon paper publication.)*
 
 ---
 
 ## 📊 Experimental Results
-![Experiment1](fig/5.png)
-![Experiment2](fig/6.png)
+
+![Experiment1](fig/5.pdf)
+![Experiment2](fig/6.pdf)
+
 ---
 
 ## 🧪 Requirements
